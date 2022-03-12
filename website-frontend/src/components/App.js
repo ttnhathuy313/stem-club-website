@@ -7,10 +7,12 @@ import NavBar from './NavBar'
 
 const Main = () => {
   return (
-    <Routes>
-      <Route path='/' element={ <Home /> } />
-      <Route path='/about' element={ <About /> } />
-    </Routes>
+    <div className="container">
+      <Routes className='main container'>
+        <Route path='/' element={ <Home /> } />
+        <Route path='/about' element={ <About /> } />
+      </Routes>
+    </div>
   )
 }
 

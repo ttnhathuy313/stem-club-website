@@ -10,13 +10,16 @@ import Podcast from './Podcast'
 
 const Main = () => {
   return (
-    <Routes>
-      <Route path='/' element={ <Home /> } />
-      <Route path='/about' element={ <About /> } />
-      <Route path='/activities' element={ <Activities /> } />
-      <Route path='/blog' element={ <Blog /> } />
-      <Route path='/podcast' element={ <Podcast /> } />
-    </Routes>
+
+    <div className="container">
+      <Routes className='main container'>
+        <Route path='/' element={ <Home /> } />
+        <Route path='/about' element={ <About /> } />
+        <Route path='/activities' element={ <Activities /> } />
+        <Route path='/blog' element={ <Blog /> } />
+        <Route path='/podcast' element={ <Podcast /> } />
+      </Routes>
+    </div>
   )
 }
 

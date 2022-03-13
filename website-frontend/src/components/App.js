@@ -4,12 +4,18 @@ import Footer from './Footer';
 import Home from './Home'
 import About from './About'
 import NavBar from './NavBar'
+import Activities from './Activities'
+import Blog from './Blog'
+import Podcast from './Podcast'
 
 const Main = () => {
   return (
     <Routes>
       <Route path='/' element={ <Home /> } />
       <Route path='/about' element={ <About /> } />
+      <Route path='/activities' element={ <Activities /> } />
+      <Route path='/blog' element={ <Blog /> } />
+      <Route path='/podcast' element={ <Podcast /> } />
     </Routes>
   )
 }

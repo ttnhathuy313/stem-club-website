@@ -1,55 +1,54 @@
-// TODO: Complete this @linhvth
 import React from "react";
-import {Image, Row, Column, Container, CopyRight, 
-        FooterArea, FooterLink, Name, Heading} from "./FooterStyles.js";
+import footerLinks from "../data/footerLinks.js";
+import contacts from "../data/contacts.js";
+import stemClubLogo from '../images/stem-club-logo.png'
+
+const Column = ({ title, links }) => {
+  return (
+    <div className='d-flex flex-column col-3'>
+      <h5 className="fw-bold text-white"> { title } </h5>
+      {
+        links.map(link => {
+          return <a className='text-white' href={ link.url }> { link.text } </a>
+        })
+      }
+    </div>
+  )
+}
+
+const Contacts = () => {
+  return <div className='d-flex flex-column'>
+    {
+      contacts.map(contact => (
+        <p> <span className="fw-bold">{ contact.text }</span>: { contact.url } </p>
+      ))
+    }
+  </div>
+}
 
 const Footer = () => {
   return (
-    <div>
-      <FooterArea>
-        <Image src=""></Image>
-        <Container>
-          <Row>
-            <Column>
-              <Heading>About us</Heading>
-              <FooterLink>Story</FooterLink>
-              <FooterLink>Human</FooterLink>
-              <FooterLink>Resource</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Activities</Heading>
-              <FooterLink>Project</FooterLink>
-              <FooterLink>Event</FooterLink>
-              <FooterLink>Competition</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Blog</Heading>
-              <FooterLink>STEM Journal</FooterLink>
-              <FooterLink>STEM Sharing</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Podcast</Heading>
-              <FooterLink>The Keen Podcast</FooterLink>
-              <FooterLink>Podcast 1</FooterLink>
-              <FooterLink>Podcast 2</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Contact us</Heading>
-              <FooterLink href="https://www.facebook.com/fulbrightstemclub" target="_blank">Facebook</FooterLink>
-              <FooterLink>[Email]</FooterLink>
-              <FooterLink>[Phone number]</FooterLink>
-            </Column>
-          </Row>
-        </Container>
-        <div>
-          <Name className="test-xs-center">
-            Fulbright STEM Club
-          </Name>
-          <CopyRight className="text-xs-center">
-            &copy;{new Date().getFullYear()} Fulbright STEM Club. All Rights Reserved.
-          </CopyRight>
+    <div className='bg-black p-5 container-fluid text-white mt-4'>
+      <div className="row">
+        <div className="col-6 d-flex flex-row align-items-center">
+          <img src={ stemClubLogo } alt="STEM Club logo" className='w-25 me-4'/>
+          <Contacts />
         </div>
-      </FooterArea>
+        <div className='col-6 container'>
+          <div className="row justify-content-end">
+            {
+              footerLinks.map(
+                col => <Column 
+                  title={col.title} links={ col.links } key={col.title} 
+                />
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div className="text-center mt-4">
+        <div>&copy; 2022 - Present, Fulbright STEM Club. All Rights Reserved.</div>
+      </div>
     </div>
   )
 }

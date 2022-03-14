@@ -1,8 +1,6 @@
-import 'bootstrap/scss/bootstrap.scss'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.scss'
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 

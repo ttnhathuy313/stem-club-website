@@ -9,7 +9,7 @@ const Column = ({ title, links }) => {
       <h5 className="fw-bold text-white"> { title } </h5>
       {
         links.map(link => {
-          return <a className='text-white' href={ link.url }> { link.text } </a>
+          return <a className='text-white text-break' href={ link.url }> { link.text } </a>
         })
       }
     </div>
@@ -20,7 +20,7 @@ const Contacts = () => {
   return <div className='d-flex flex-column'>
     {
       contacts.map(contact => (
-        <p> <span className="fw-bold">{ contact.text }</span>: { contact.url } </p>
+        <p className='text-break'> <span className="fw-bold">{ contact.text }</span>: { contact.url } </p>
       ))
     }
   </div>
@@ -29,12 +29,14 @@ const Contacts = () => {
 const Footer = () => {
   return (
     <div className='bg-black p-5 container-fluid text-white mt-4'>
-      <div className="row">
-        <div className="col-6 d-flex flex-row align-items-center">
-          <img src={ stemClubLogo } alt="STEM Club logo" className='w-25 me-4'/>
-          <Contacts />
+      <div className="row gy-4">
+        
+        <div className="col-12 col-md-5 d-flex flex-row align-items-center">
+          <img src={ stemClubLogo } alt="STEM Club logo" className='w-25 me-4 flex-shrink-0'/>
+          <Contacts/>
         </div>
-        <div className='col-6 container'>
+
+        <div className='col-12 col-md-7 container'>
           <div className="row justify-content-end">
             {
               footerLinks.map(
@@ -45,6 +47,7 @@ const Footer = () => {
             }
           </div>
         </div>
+
       </div>
       <div className="text-center mt-4">
         <div>&copy; 2022 - Present, Fulbright STEM Club. All Rights Reserved.</div>

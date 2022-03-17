@@ -108,10 +108,6 @@ const About = () => {
 
       {/* Partners */}
       <Partners />
-      <Divider />
-
-
-
     </div>
   )
 }

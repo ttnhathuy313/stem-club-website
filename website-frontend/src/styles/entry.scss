@@ -1,0 +1,7 @@
+// This file contains lightweight variables to use in component's styles
+// Import this file to every SCSS file in `components/`
+
+@import './bootstrap/overrides.scss';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';

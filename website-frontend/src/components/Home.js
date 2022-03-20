@@ -5,7 +5,7 @@ import decoration from '../images/decoration.png'
 const Hero = () => {
     return (
         <div className="container" id="hero">
-            <div className="row vh-100 align-items-center">
+            <div className="row h-100 align-items-center">
                 <div className="col-5">
                     <h1 className="text-secondary">Fulbright <br></br> STEM Club.</h1>
                     <h2 className="text-primary">Leaders of the next <br></br> technological revolution</h2>

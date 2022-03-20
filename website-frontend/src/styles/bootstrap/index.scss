@@ -1,6 +1,3 @@
 @import './overrides.scss';
 @import 'bootstrap/scss/bootstrap.scss';
-
-#hero {
-  height: calc(100vh - #{$spacer} * 2 - #{$nav-link-height} - #{$nav-link-padding-y * 2});
-}
+@import '../app_variables.scss';

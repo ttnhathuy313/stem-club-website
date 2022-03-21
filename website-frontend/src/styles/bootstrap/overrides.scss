@@ -3,4 +3,23 @@
 
 $primary: #00196E;
 $secondary: #FFAD1D;
-$font-family-base: "Montserrat"
+$font-family-base: "Montserrat";
+$position-values: (
+  n100: -100%,
+  n90: -90%,
+  n80: -80%,
+  n70: -70%,
+  n60: -60%,
+  n50: -50%,
+  n40: -40%,
+  n30: -30%,
+  n20: -20%,
+  n10: -10%,
+  0: 0,
+  10: 10%,
+  20: 20%,
+  30: 30%,
+  40: 40%,
+  50: 50%,
+  100: 100%
+);

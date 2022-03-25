@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Home from './Home'
 import About from './About'
 import NavBar from './NavBar'
+import Activities from './Activities';
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       <Routes className='main container'>
         <Route path='/' element={ <Home /> } />
         <Route path='/about' element={ <About /> } />
+        <Route path='/activities' element={ <Activities />} />
       </Routes>
     </div>
   )

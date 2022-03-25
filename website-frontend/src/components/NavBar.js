@@ -17,6 +17,7 @@ const NavBar = () => {
     <div className='d-flex flex-row'>
       <NavBtn path='/' text='Home' />
       <NavBtn path='/about' text='About' />
+      <NavBtn path='/activities' text='Activities' />
     </div>
   )
 }

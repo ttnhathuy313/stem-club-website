@@ -1,6 +1,6 @@
 // @nhomnhomm Complete this
 import {Link} from 'react-router-dom'
-import logo from '../images/logo.png'
+import logo from '../images/stem-club-logo.png'
 import './NavBar.scss'
 
 const NavLink = ({path, text}) => {

@@ -19,10 +19,27 @@ const Hero = () => {
     )
 }
 
+const YetToDecide = () => {
+    return (
+        <div className="container">
+        </div>
+    ) 
+}
+
+const Latest = () => {
+    return (
+        <div className="container">
+        </div>
+    )
+}
 
 const Home = () => {
     return (
-        <Hero/>
+        <>
+            <Hero/>
+            <YetToDecide/>
+            <Latest/>
+        </>
     )
 }
 

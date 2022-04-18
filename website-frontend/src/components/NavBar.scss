@@ -1,6 +1,7 @@
 @import '../styles/entry.scss';
 
 .nav-btn:hover {
-  background-color: $primary;
+  background-color: $secondary;
   color: white !important;
+  border-radius: 50px;
 }

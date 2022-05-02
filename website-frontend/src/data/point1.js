@@ -1,0 +1,21 @@
+const point1 = [
+  {
+    title1: "Fulbright is not my choice, it's my destiny",
+    title2: "STEM is not only researching, but it also includes learning by doing",
+    text1: [
+      "Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours .A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic:", 
+      "During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours. A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours. A 4-member team from STEM Club has participated in the competition. The team has  finished the challenge with a really promising result.", 
+      "Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours .A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic:", 
+      "Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA.",
+      "Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA."
+    ],
+    text2: [
+      "Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours .A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic:",
+      "During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours. A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours. A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.",
+      "A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result.Topic: During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours.", 
+      "During the talk, insights about being an intern in such an prestigious STEM organization, the pros and cons of being an data analyst intern at NASA. STEM Hackathon is a place for STEM enthusiasts to join and challenge themselves with STEM topics throughout 72 hours. A 4-member team from STEM Club has participated in the competition. The team has finished the challenge with a really promising result."
+    ]
+  }
+]
+
+export default point1;

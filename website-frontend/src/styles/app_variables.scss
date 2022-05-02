@@ -1,3 +1,6 @@
-#hero {
-  height: calc(100vh - #{$spacer} * 2 - #{$nav-link-height} - #{$nav-link-padding-y * 2});
+.full-height {
+  height: calc(100vh - #{$spacer} * 0.5 - #{$nav-link-height} - #{$nav-link-padding-y});
+}
+.border-radius {
+  border-radius: 50px;
 }

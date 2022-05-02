@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "examples",
+  "info": {
+    "singularName": "example",
+    "pluralName": "examples",
+    "displayName": "example",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "number": {
+      "type": "float"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "true_false": {
+      "type": "boolean"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "json": {
+      "type": "json"
+    },
+    "email": {
+      "type": "email"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "password": {
+      "type": "password"
+    }
+  }
+}

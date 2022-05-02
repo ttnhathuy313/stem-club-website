@@ -1,6 +1,17 @@
+.hero-full-height {
+  height: calc(100vh - #{$spacer} * 0.5 - #{$nav-link-height} - #{$nav-link-padding-y});
+}
+
 .full-height {
   height: calc(100vh - #{$spacer} * 0.5 - #{$nav-link-height} - #{$nav-link-padding-y});
 }
+
+@media only screen and (max-width: 600px) {
+  .hero-full-height {
+    height: calc(50vh - #{$spacer} * 0.5 - #{$nav-link-height} - #{$nav-link-padding-y});
+  }
+}
+
 .border-radius {
   border-radius: 50px;
 }

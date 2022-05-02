@@ -11,9 +11,9 @@ const NavLink = ({path, text}) => {
   
   return (
     <Link 
-      to = {path} 
+      to={path} 
       className={`
-        nav-item nav-link nav-btn text-white px-3 py-3
+        nav-item nav-link nav-btn text-white px-3 py-1 rounded-pill
         ${isCurrentView ? "active" : ""}
       `}
     >
@@ -26,7 +26,6 @@ const NavBar = () => {
   return (
     <div className = 'navbar navbar-expand-lg navbar-dark bg-primary py-0 sticky-top border-bottom'>
       <Link to='/' className = 'navbar-brand ms-4'>
-        {/* <h3>Fulbright STEM Club</h3> */}
         <img src={logo} width = '40' height = '40' alt ='Logo' ></img>
       </Link>
 

@@ -3,7 +3,7 @@ import logo from '../images/stem-club-logo.png'
 
 const Hero = () => {
     return (
-        <div className="container-fluid bg-primary full-height p-4">
+        <div className="container-fluid bg-primary hero-full-height p-4">
             <div className="row h-100 align-items-center">
                 <div className="col-2">
 
@@ -41,7 +41,7 @@ const Mission = () => {
 
 const Value = ({value, description}) => {
     return (
-        <div className="col-3">
+        <div className="col-md-3">
             <img src={logo} width = "50" height = "50" alt=""></img>
             <h4 className="text-primary fw-bold">{value}</h4>
             <p className="text-primary">[{description}]</p>
@@ -57,7 +57,7 @@ const CoreValues = () => {
                     <h3 className="fw-bold m-0">Core Values</h3>
                 </div>
             </div>
-            <div className="row h-100 align-items-center justify-content-center">
+            <div className="row overflow-auto h-100 align-items-center justify-content-center">
                 <div className="row text-center justify-content-center">
                     <Value value="Community-minded" description="We solve real problems in our community"/>
                     <Value value="Connected" description="We help great minds meet, network, and socialize"/>
@@ -73,7 +73,7 @@ const CoreValues = () => {
 
 const PostPreview = ({title, category}) => {
     return (
-        <div className="col-3">
+        <div className="col-md-3">
             <img src={logo} width = "50" height = "50" alt=""></img>
             <h4 className="text-primary fw-bold">{title}</h4>
             <p className="text-secondary fw-bold">{category}</p>
@@ -89,7 +89,7 @@ const LatestUpdates = () => {
                     <h3 className="fw-bold m-0">Core Values</h3>
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className="row overflow-auto justify-content-center">
                 <PostPreview title="Trivia Night at Fulbright - an annual playground for STEM enthusiasts" category="Activities"/>
                 <PostPreview title="Trivia Night at Fulbright - an annual playground for STEM enthusiasts" category="Activities"/>
                 <PostPreview title="Trivia Night at Fulbright - an annual playground for STEM enthusiasts" category="Activities"/>

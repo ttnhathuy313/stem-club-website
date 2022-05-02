@@ -5,7 +5,7 @@ import './NavBar.scss'
 
 const NavLink = ({path, text}) => {
   return (
-    <Link to = {path} className='nav-item nav-link nav-btn fw-bold text-white px-3 py-3'>
+    <Link to = {path} className='nav-item nav-link nav-btn fw-bold text-white px-3 py-1'>
       { text }
     </Link>
   )

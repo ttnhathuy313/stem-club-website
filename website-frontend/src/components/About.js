@@ -1,113 +1,104 @@
-import Divider from "./utils/Divider"
+import logo from '../images/stem-club-logo.png'
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { BACKEND_URL } from '../utils/api'
 
-// Dummy avatars
-import khoi from '../images/khoi.png'
-import phu from '../images/phu.png'
-import lp from '../images/lp.png'
-import thayminh from '../images/thayminh.jpg'
-import kinho from '../images/kinho.jpg'
-import thaykien from '../images/thaykien.jpg'
-import nanette from '../images/nanette.jpg'
-import gdsc from '../images/gdsc.png'
-
-const Person = ({ avatar, title, bio }) => {
-  // TODO: show bio via popup
-
+const Bio = ({profile, avatar}) => {
   return (
-    <div className="text-center col-4 col-md-3">
-      <img src={ avatar } alt={`avatar of ${title}`} className='w-100 rounded-circle' />
-      <p className="text-primary mt-2"> { title } </p>
+    <div className='text-start'>
+      <h3> {profile.name} </h3>
+      <p> {profile.subtitle} </p>
+      <div className='d-flex flex-row'>
+        <div className="w-50">
+          {avatar}
+        </div>
+        <p> {profile.bio} </p>
+      </div>
     </div>
   )
 }
 
-const Members = () => {
+const Person = ({ avatar, title, profile, index }) => {
+  // TODO: show bio via popup
+
+  const avatarUrl = avatar.data 
+    ? BACKEND_URL + avatar.data.attributes.url 
+    : logo
+  
+  const Avatar = () => <img
+    src={ avatarUrl } alt={`avatar of ${title}`} 
+    className='w-100 rounded-circle'
+    data-bs-toggle="modal" data-bs-target={`#bio${index}`}
+  />
+
   return (
-    <div>
-      <h3 className="text-primary mb-3">Members</h3>
-      <div className="row">
-        <Person avatar={ khoi } title='Nguyen Phung Nhat Khoi (Co23)' />
-        <Person avatar={ phu } title='Nguyen Duc Phu (Co24)' />
-        <Person avatar={ lp } title='Tran Lan Phuc (Co24)' />
+    <div
+      className="text-center col-4 col-md-3 px-4"
+    >
+      <Avatar /> 
+      <p className="text-primary mt-2"> { title } </p>
+
+      <div class="modal fade" id={`bio${index}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Bio of { title }</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <Bio profile={profile} avatar={<Avatar />} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  ) 
+  )
 }
 
-const Advisors = () => {
-  return (
-    <div>
-      <h3 className="text-primary mb-3">Advisors</h3>
-      <div className="row">
-        <Person avatar={ thayminh } title='Dr. Nguyen Hop Minh' />
-        <Person avatar={ thaykien } title='Dr. Truong Trung Kien' />
-        <Person avatar={ kinho } title='Dr. KinHo Chan' />
-        <Person avatar={ nanette } title='Dr. Nanette Veilleux' />
-      </div>
-    </div>
-  ) 
-}
-
-const Partners = () => {
-  return (
-    <div>
-      <h3 className="text-primary mb-3">Partners</h3>
-      <div className="row">
-        <Person avatar={ gdsc } title='GDSC @ Fulbright' />
-      </div>
-    </div>
-  ) 
-}
+const SectionHeader = ({text}) => (
+  <div className='bg-primary text-white text-center rounded pb-1 pt-2'>
+    <h3> {text} </h3>
+  </div>
+)
 
 const About = () => {
-  const CoreValue = ({title, content}) => {
-    return (
-      <div>
-        <h5 className="text-secondary">
-          { title }
-        </h5>
-        <p>
-          { content }
-        </p>
+  const [members, setMembers] = useState([])
+  useEffect(() => {
+    const fetchMembers = async () => {
+      const res = await axios.get(`${BACKEND_URL}/api/members?populate=*`)
+      console.log(res.data.data);
+      setMembers(res.data.data)
+    }
+
+    fetchMembers()
+  }, [])
+
+  const People = ({role, title}) => (
+    <div>
+      <h4 className='bold text-primary py-3'>{title}</h4>
+      <div className="row px-4">
+        {members
+        .filter(({attributes}) => attributes.role === role)
+        .map(({attributes}, index) =>
+          <Person 
+            key={attributes.name} 
+            title={attributes.name} 
+            avatar={attributes.avatar} 
+            profile={attributes} 
+            index={role+index} // to make the index unique for all people
+          />)
+        }
       </div>
-    )
-  }
+    </div>
+  )  
 
   return (
-    <div className=''>
-      
-      {/* MISSON AND CORE VALUES */}
-      <div className="row">
-        <div className="col-12 col-md">
-          <h3 className='text-primary'>Mission</h3>
-          <p>
-            The world is evolving in unexpected ways. Fulbright is built to <a href="https://fulbright.edu.vn/mission/">close the gap</a> between higher education and Vietnam’s greatest needs. One of such needs is quality human resources for the technological revolution.
-          </p>
-          <p>
-            Fulbright STEM Club is an incubator of future leaders for the next technological revolution. By 2025, Fulbright STEM Club will be one of the most innovative and vibrant STEM communities for Vietnamese youth.
-          </p>
-        </div>
-        <div className="col-12 col-md">
-          <h3 className='text-primary'>Core values</h3>
-          <CoreValue title='Community-minded' content='We solve real problems in our community.' />
-          <CoreValue title='Connected' content='We help great minds meet, network, and socialize. ' />
-          <CoreValue title='Intellectually curious' content='We create innovative STEM-powered products.' />
-          <CoreValue title='Career-oriented' content='We equip members with essential hard skills for future career. ' />
-        </div>     
-      </div>
-
-      <Divider />
-
-      {/* MEMBERS */}
-      <Members />
-      <Divider />
-
-      {/* Advisors */}
-      <Advisors />
-      <Divider />
-
-      {/* Partners */}
-      <Partners />
+    <div className='px-5 py-3'>
+      <SectionHeader text="Our Team" />
+      <People role='leader' title='Leaders' />
+      <People role='member' title='Members' />
+      <SectionHeader text="Our Partners" />
+      <People role='advisor' title='Advisors' />
     </div>
   )
 }

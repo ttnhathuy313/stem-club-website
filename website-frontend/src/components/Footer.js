@@ -5,11 +5,11 @@ import stemClubLogo from '../images/stem-club-logo.png'
 
 const Column = ({ title, links }) => {
   return (
-    <div className='d-flex flex-column col-3'>
+    <div className='d-flex flex-column col-4'>
       <h5 className="fw-bold text-white"> { title } </h5>
       {
-        links.map(link => {
-          return <a className='text-white text-break' href={ link.url }> { link.text } </a>
+        links.map((link, index) => {
+          return <a className='text-white text-break' href={ link.url } key={index}> { link.text } </a>
         })
       }
     </div>
@@ -17,10 +17,12 @@ const Column = ({ title, links }) => {
 }
 
 const Contacts = () => {
-  return <div className='d-flex flex-column'>
+  return <div className='d-flex flex-row'>
     {
       contacts.map(contact => (
-        <p className='text-break'> <span className="fw-bold">{ contact.text }</span>: { contact.url } </p>
+        <a href={contact.url} className="text-white mx-1" >
+          <i className={contact.iconClass} />
+        </a>
       ))
     }
   </div>
@@ -28,16 +30,15 @@ const Contacts = () => {
 
 const Footer = () => {
   return (
-    <div className='bg-black p-5 container-fluid text-white mt-4'>
-      <div className="row gy-4">
-        
-        <div className="col-12 col-md-5 d-flex flex-row align-items-center">
-          <img src={ stemClubLogo } alt="STEM Club logo" className='w-25 me-4 flex-shrink-0'/>
-          <Contacts/>
+    <div className='bg-primary py-5 container-fluid text-white mt-4'>
+      <div className="row gy-4 align-items-center w-75 mx-auto">
+        <div className="col-12 col-md-3 d-flex flex-column align-items-center">
+          <img src={ stemClubLogo } alt="STEM Club logo" className='w-75 flex-shrink-0'/>
+          <Contacts />
         </div>
 
-        <div className='col-12 col-md-7 container'>
-          <div className="row justify-content-end">
+        <div className='col-12 col-md-9 container'>
+          <div className="row justify-content-between">
             {
               footerLinks.map(
                 col => <Column 
@@ -48,9 +49,6 @@ const Footer = () => {
           </div>
         </div>
 
-      </div>
-      <div className="text-center mt-4">
-        <div>&copy; 2022 - Present, Fulbright STEM Club. All Rights Reserved.</div>
       </div>
     </div>
   )

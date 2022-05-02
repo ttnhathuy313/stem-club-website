@@ -27,35 +27,20 @@ const footerLinks = [
         text: 'Events',
         url: 'https://google.com'
       },
-      {
-        text: 'Competitions',
-        url: 'https://google.com'
-      }
     ]
   },
   {
-    title: 'Blogs',
-    links: [
-      {
-        text: 'STEM Journal'
-      },
-      {
-        text: 'STEM Sharing'
-      }
-    ]
-  },
-  {
-    title: 'Podcast',
+    title: 'Products',
     links: [
       {
         text: 'Keen Podcast'
       },
       {
-        text: 'Podcast 1'
+        text: 'Journal'
       },
       {
-        text: 'Podcast 2'
-      },
+        text: 'Blogs'
+      }
     ]
   },
 ]

@@ -1,0 +1,1 @@
+export const BACKEND_URL = 'https://stem-website-be.herokuapp.com'

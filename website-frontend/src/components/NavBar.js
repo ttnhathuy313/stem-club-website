@@ -24,7 +24,7 @@ const NavLink = ({path, text}) => {
 
 const NavBar = () => {
   return (
-    <div className = 'navbar navbar-expand-lg navbar-dark bg-primary py-0 sticky-top border-bottom'>
+    <div className = 'navbar navbar-expand-md navbar-dark bg-primary py-0 sticky-top border-bottom'>
       <Link to='/' className = 'navbar-brand ms-4'>
         <img src={logo} width = '40' height = '40' alt ='Logo' ></img>
       </Link>
@@ -38,9 +38,9 @@ const NavBar = () => {
           <NavLink path = '/' text = 'Home'/>
           <NavLink path = '/about' text = 'About Us'/>
           <NavLink path = '/activities' text = 'Activities'/>
-          <NavLink path = '/blog' text = 'Blog'/>
+          {/* <NavLink path = '/blog' text = 'Blog'/> */}
           <NavLink path = '/podcast' text = 'Podcast'/>
-          <NavLink path = '/journal' text = 'Journal'/>
+          {/* <NavLink path = '/journal' text = 'Journal'/> */}
         </div>
       </div>
     </div>

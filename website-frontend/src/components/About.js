@@ -2,6 +2,7 @@ import logo from '../images/stem-club-logo.png'
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { BACKEND_URL } from '../utils/api'
+import SectionHeader from './utils/SectionHeader'
 
 const Bio = ({profile, avatar}) => {
   return (
@@ -54,12 +55,6 @@ const Person = ({ avatar, title, profile, index }) => {
     </div>
   )
 }
-
-const SectionHeader = ({text}) => (
-  <div className='bg-primary text-white text-center rounded pb-1 pt-2'>
-    <h3> {text} </h3>
-  </div>
-)
 
 const About = () => {
   const [members, setMembers] = useState([])

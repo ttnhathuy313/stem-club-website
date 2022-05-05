@@ -1,7 +1,9 @@
+import SectionHeader from './utils/SectionHeader'
+
 const Podcast = () => {
   return (
     <div className="pt-4 container col-lg-7">
-      <h3>The Keen Podcast</h3>
+      <SectionHeader text="The Keen Podcast" />
       <p>
       The Keen Podcast aims to create an audible platform for engaging discussion among science community in Vietnam. We are motivated to create educational materials which inspires young Vietnamese learners.
       </p>

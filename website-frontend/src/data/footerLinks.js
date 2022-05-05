@@ -3,16 +3,16 @@ const footerLinks = [
     title: 'About us',
     links:[
       {
-        text: 'Story',
-        url: 'https://google.com'
+        text: 'Mission',
+        url: '/about'
       },
       {
-        text: 'Human',
-        url: 'https://google.com'
+        text: 'Members',
+        url: '/about'
       },
       {
-        text: 'Resources',
-        url: 'https://google.com'
+        text: 'Partners',
+        url: '/about'
       }
     ]
   },

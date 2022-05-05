@@ -26,10 +26,8 @@ $position-values: (
 
 $border-radius: 1.5rem;
 
-.card:hover{box-shadow: 3px 3px 10px -4px #00196E;}
+.card:hover{box-shadow: 3px 3px 10px -4px #00196E; cursor: pointer;}
 .inner{overflow: hidden;}
-.inner img{transition: all 1.5s ease;}
-.inner:hover img {transform: scale(1.5);}
 
 .col-sm{
   margin-bottom: 1.5em;

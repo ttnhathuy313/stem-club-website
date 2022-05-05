@@ -64,9 +64,6 @@ const Activities = () => {
             <Card image={ dummy } title='STEM Club Website' date='Past' />
           </div>
         </div>
-
-        <SeeMore link={'https://google.com'}/>
-
       </div>
 
       {/* EVENTS */}
@@ -82,10 +79,7 @@ const Activities = () => {
           <div class="col-sm">
             <Card image={ dummy } title='Sharing with NASA Intern' date='Feb 10, 2022' />
           </div>
-        </div>
-
-        <SeeMore link={'https://google.com'}/>
-        
+        </div>  
       </div>
 
       {/* COMPETITION */}
@@ -102,7 +96,6 @@ const Activities = () => {
             <Card image={ dummy } title='STEM Hackathon' date='Jun 7th, 2021'/>
           </div>
         </div>
-        <SeeMore link={'https://google.com'}/>
       </div>
     </div>
   )

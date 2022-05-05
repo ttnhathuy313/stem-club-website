@@ -1,12 +1,12 @@
 const contacts = [
   {
     text: 'Email',
-    url: 'stem.club@student.fulbright.edu.vn',
+    url: 'mailto:stem.club@student.fulbright.edu.vn',
     iconClass: 'bi bi-envelope'
   },
   {
     text: 'Facebook',
-    url: 'fb.com/fulbrightstemclub',
+    url: 'https://facebook.com/fulbrightstemclub',
     iconClass: 'bi bi-facebook'
   },
   // {

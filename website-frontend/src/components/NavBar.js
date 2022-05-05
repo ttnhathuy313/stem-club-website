@@ -13,7 +13,7 @@ const NavLink = ({path, text}) => {
     <Link 
       to={path} 
       className={`
-        nav-item nav-link nav-btn text-white px-3 py-1 rounded-pill
+        nav-item nav-link nav-btn text-white ms-2 px-3 py-1 rounded-pill
         ${isCurrentView ? "active" : ""}
       `}
     >

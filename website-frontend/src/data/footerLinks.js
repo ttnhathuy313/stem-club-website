@@ -21,11 +21,11 @@ const footerLinks = [
     links:[
       {
         text: 'Projects',
-        url: 'https://google.com'
+        url: '/activities'
       },
       {
         text: 'Events',
-        url: 'https://google.com'
+        url: '/activities'
       },
     ]
   },
@@ -33,13 +33,15 @@ const footerLinks = [
     title: 'Products',
     links: [
       {
-        text: 'Keen Podcast'
+        text: 'Keen Podcast',
+        url: 'https://open.spotify.com/show/1S0hnURWTEnayC2mgmcyht'
       },
       {
         text: 'Journal'
       },
       {
-        text: 'Blogs'
+        text: 'Blogs',
+        url: '/blog'
       }
     ]
   },

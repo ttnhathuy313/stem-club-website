@@ -32,7 +32,7 @@ const Hero = () => {
 const Mission = () => {
     return (
         <div className="mt-4">
-            <SectionHeader text="Misison" />
+            <SectionHeader text="Mission" />
             <div className="col-8 mx-auto">
                 <p>The world is evolving in unexpected ways. Fulbright is built to close the gap between higher education and Vietnam’s greatest needs. One of such needs is quality human resources for the technological revolution.</p>
                 <p>Fulbright STEM Club is an incubator of future leaders for the next technological revolution. By 2025, Fulbright STEM Club will be one of the most innovative and vibrant STEM communities for Vietnamese youth.</p>
@@ -74,7 +74,7 @@ const PostPreview = ({title, category}) => {
         <div className="col-md-3">
             <img src={dummy1} width="100%" alt=""></img>
             <h5 className="text-primary mt-2">{title}</h5>
-            <span className="text-secondary bg-primary p-2 rounded">{category}</span>
+            <span className="text-primary bg-secondary p-2 rounded">{category}</span>
         </div>
     )
 }

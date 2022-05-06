@@ -1,0 +1,6 @@
+.avatar {
+  object-fit: cover;; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 200px;
+  width: 200px;
+}

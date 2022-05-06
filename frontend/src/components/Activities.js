@@ -1,13 +1,6 @@
 import React from "react";
-import Divider from "./utils/Divider";
-
-import dummy from '../images/Background.png'
-
-const SectionHeader = ({text}) => (
-  <div className='bg-primary text-white text-center rounded pb-1 pt-2 mt-5'>
-    <h3 className=""> {text} </h3>
-  </div>
-)
+import dummy from '../images/blog-picture1.png'
+import SectionHeader from "./utils/SectionHeader";
 
 const Card = ({title, image, date}) => {
   return (
@@ -27,20 +20,20 @@ const Card = ({title, image, date}) => {
   )
 }
 
-const SeeMore = ({link}) => {
-  return (
-    <div className="text-end fst-italic text-primary mb-5">
-      <a href={link}>See more</a>
-    </div>
-  )
-}
+// const SeeMore = ({link}) => {
+//   return (
+//     <div className="text-end fst-italic text-primary mb-5">
+//       <a href={link}>See more</a>
+//     </div>
+//   )
+// }
 
 const Activities = () => {
   return (
     <div className="">
       {/* PROJECT */}
       <div class="container">
-        <SectionHeader text="Project" />
+        <SectionHeader text="Projects" />
         <div className="row mt-5">
           <div className="col-sm">
             <Card image={ dummy } title='Landscape Research Project' date='Present' />
@@ -68,7 +61,7 @@ const Activities = () => {
 
       {/* EVENTS */}
       <div class="container">
-        <SectionHeader text="Event" />
+        <SectionHeader text="Events" />
         <div className="row mt-5">
           <div class="col-sm">
             <Card image={ dummy } title='Trivia Night at Fulbright - an annual playground for STEM enthusiasts' date='Dec 12, 2021' />
@@ -84,7 +77,7 @@ const Activities = () => {
 
       {/* COMPETITION */}
       <div class="container">
-        <SectionHeader text="Competition" />  
+        <SectionHeader text="Competitions" />  
         <div className="row mt-5">
           <div class="col-sm">
             <Card image={ dummy } title='ICPC 2022' date='Mar 1st, 2022' />

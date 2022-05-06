@@ -2,10 +2,11 @@ import React from "react";
 import footerLinks from "../data/footerLinks.js";
 import contacts from "../data/contacts.js";
 import stemClubLogo from '../images/stem-club-logo.png'
+import './Footer.scss'
 
 const Column = ({ title, links }) => {
   return (
-    <div className='d-flex flex-column col-4'>
+    <div className='d-flex flex-column ms-5'>
       <h5 className="fw-bold text-white"> { title } </h5>
       {
         links.map((link, index) => {
@@ -31,23 +32,23 @@ const Contacts = () => {
 const Footer = () => {
   return (
     <div className='bg-primary py-5 container-fluid text-white mt-4'>
-      <div className="row gy-4 align-items-center w-75 mx-auto">
-        <div className="col-12 col-md-3 d-flex flex-column align-items-center">
-          <img src={ stemClubLogo } alt="STEM Club logo" className='w-75 flex-shrink-0'/>
+      <div className="d-flex flex-row align-items-start justify-content-center w-75 mx-auto">
+        <div className="d-flex flex-column align-items-center">
+          <img src={ stemClubLogo } alt="STEM Club logo" className='footer-avatar'/>
           <Contacts />
         </div>
 
-        <div className='col-12 col-md-9 container'>
+        {
+          footerLinks.map(
+            col => <Column 
+              title={col.title} links={ col.links } key={col.title} 
+            />
+          )
+        }
+        {/* <div className='container'>
           <div className="row justify-content-between">
-            {
-              footerLinks.map(
-                col => <Column 
-                  title={col.title} links={ col.links } key={col.title} 
-                />
-              )
-            }
           </div>
-        </div>
+        </div> */}
 
       </div>
     </div>

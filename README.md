@@ -1,9 +1,12 @@
 # stem-club-website
 
-Website of Fulbright STEM Club
+Website of Fulbright STEM Club, proudly created by its members.
 
-## Members:
+## Members
 
 - Vu Thi Hong Linh
 - Nguyen Phung Nhat Khoi
-- Le Nam Dong
+- Doan Duc Nguyen Long
+- Nguyen Thi Quynh Anh
+- Phung Thi Anh Thy
+- Tran Khue Tu

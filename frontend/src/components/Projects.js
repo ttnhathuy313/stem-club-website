@@ -28,7 +28,7 @@ const Card = ({title, image, date}) => {
 //   )
 // }
 
-const Activities = () => {
+const Projects = () => {
   return (
     <div className="">
       {/* PROJECT */}
@@ -58,40 +58,8 @@ const Activities = () => {
           </div>
         </div>
       </div>
-
-      {/* EVENTS */}
-      <div class="container">
-        <SectionHeader text="Events" />
-        <div className="row mt-5">
-          <div class="col-sm">
-            <Card image={ dummy } title='Trivia Night at Fulbright - an annual playground for STEM enthusiasts' date='Dec 12, 2021' />
-          </div>
-          <div class="col-sm">
-            <Card image={ dummy } title='Sharing with NASA Intern' date='Feb 10, 2022' />
-          </div>
-          <div class="col-sm">
-            <Card image={ dummy } title='Sharing with NASA Intern' date='Feb 10, 2022' />
-          </div>
-        </div>  
-      </div>
-
-      {/* COMPETITION */}
-      <div class="container">
-        <SectionHeader text="Competitions" />  
-        <div className="row mt-5">
-          <div class="col-sm">
-            <Card image={ dummy } title='ICPC 2022' date='Mar 1st, 2022' />
-          </div>
-          <div class="col-sm">
-            <Card image={ dummy } title='STEM Hackathon' date='Jun 7th, 2021'/>
-          </div>
-          <div class="col-sm">
-            <Card image={ dummy } title='STEM Hackathon' date='Jun 7th, 2021'/>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
 
-export default Activities
+export default Projects

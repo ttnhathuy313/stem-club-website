@@ -93,7 +93,7 @@ const About = () => {
       <SectionHeader text="Our Team" />
       <People role='leader' title='Leaders' />
       <People role='member' title='Members' />
-      <SectionHeader text="Our Partners" />
+      {/* <SectionHeader text="Our Partners" /> */}
       <People role='advisor' title='Advisors' />
     </div>
   )

@@ -37,7 +37,8 @@ const NavBar = () => {
         <div className = 'navbar-nav ms-auto'>
           <NavLink path = '/' text = 'Home'/>
           <NavLink path = '/about' text = 'About Us'/>
-          <NavLink path = '/activities' text = 'Activities'/>
+          <NavLink path = '/events' text = 'Events'/>
+          <NavLink path = '/activities' text = 'Projects'/>
           {/* <NavLink path = '/blog' text = 'Blog'/> */}
           <NavLink path = '/podcast' text = 'Podcast'/>
           {/* <NavLink path = '/journal' text = 'Journal'/> */}

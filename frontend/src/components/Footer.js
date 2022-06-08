@@ -6,7 +6,7 @@ import './Footer.scss'
 
 const Column = ({ title, links }) => {
   return (
-    <div className='d-flex flex-column ms-5'>
+    <div className='col-4 col-md-3 d-flex flex-column px-3'>
       <h5 className="fw-bold text-white"> { title } </h5>
       {
         links.map((link, index) => {
@@ -32,12 +32,7 @@ const Contacts = () => {
 const Footer = () => {
   return (
     <div className='bg-primary py-5 container-fluid text-white mt-4'>
-      <div className="d-flex flex-row align-items-start justify-content-center w-75 mx-auto">
-        <div className="d-flex flex-column align-items-center">
-          <img src={ stemClubLogo } alt="STEM Club logo" className='footer-avatar'/>
-          <Contacts />
-        </div>
-
+      <div className="mx-auto row col-12 col-md-8">
         {
           footerLinks.map(
             col => <Column 
@@ -45,11 +40,14 @@ const Footer = () => {
             />
           )
         }
+        <div className="d-flex flex-column align-items-center col-12 col-md-3">
+          <img src={ stemClubLogo } alt="STEM Club logo" className='footer-avatar d-none d-md-block'/>
+          <Contacts />
+        </div>
         {/* <div className='container'>
           <div className="row justify-content-between">
           </div>
         </div> */}
-
       </div>
     </div>
   )

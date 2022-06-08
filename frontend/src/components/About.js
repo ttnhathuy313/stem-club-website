@@ -27,15 +27,18 @@ const Person = ({ avatar, title, profile, index }) => {
     ? avatar.data.attributes.url 
     : logo
   
-  const Avatar = () => <img
-    src={ avatarUrl } alt={`avatar of ${title}`} 
-    className='avatar rounded-circle'
-    data-bs-toggle="modal" data-bs-target={`#bio${index}`}
-  />
+  const Avatar = () => 
+  <div className='avatar-square-container'>
+    <img
+      src={ avatarUrl } alt={`avatar of ${title}`} 
+      className='avatar'
+      data-bs-toggle="modal" data-bs-target={`#bio${index}`}
+    />
+  </div>
 
   return (
     <div
-      className="text-center col-4 col-md-3 px-4 cursor-pointer"
+      className="text-center col-6 col-md-3 cursor-pointer"
     >
       <Avatar /> 
       <p className="text-primary mt-2"> { title } ({profile.subtitle}) </p>
@@ -72,7 +75,7 @@ const About = () => {
   const People = ({role, title}) => (
     <div>
       <h4 className='bold text-primary py-3'>{title}</h4>
-      <div className="row px-4">
+      <div className="row">
         {members
         .filter(({attributes}) => attributes.role === role)
         .map(({attributes}, index) =>

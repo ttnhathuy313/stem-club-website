@@ -1,6 +1,6 @@
 const footerLinks = [
   {
-    title: 'About us',
+    title: 'About',
     links:[
       {
         text: 'Mission',
@@ -33,7 +33,7 @@ const footerLinks = [
     title: 'Products',
     links: [
       {
-        text: 'Keen Podcast',
+        text: 'Podcast',
         url: 'https://open.spotify.com/show/1S0hnURWTEnayC2mgmcyht'
       },
       {

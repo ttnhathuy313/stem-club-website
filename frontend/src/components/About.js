@@ -20,7 +20,20 @@ const Bio = ({profile, avatar}) => {
   )
 }
 
-const Person = ({ avatar, title, profile, index }) => {
+const Person = ({ avatar, title, profile, index, loading=false }) => {
+  if (loading) {
+    return (
+      <div className='col-6 col-md-3'>
+        {/* <div className='placeholder' />
+        <p>
+          <span className="placeholder"></span>
+        </p> */}
+        {/* TODO: Have real placeholders */}
+        <p>Loading ...</p>
+      </div>
+    )
+  }
+  
   // TODO: show bio via popup
 
   const avatarUrl = avatar.data 
@@ -43,14 +56,14 @@ const Person = ({ avatar, title, profile, index }) => {
       <Avatar /> 
       <p className="text-primary mt-2"> { title } ({profile.subtitle}) </p>
 
-      <div class="modal fade" id={`bio${index}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              {/* <h5 class="modal-title" id="exampleModalLabel">Bio of { title }</h5> */}
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div className="modal fade" id={`bio${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              {/* <h5 className="modal-title" id="exampleModalLabel">Bio of { title }</h5> */}
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <Bio profile={profile} avatar={<Avatar />} />
             </div>
           </div>
@@ -63,10 +76,11 @@ const Person = ({ avatar, title, profile, index }) => {
 const About = () => {
   const [members, setMembers] = useState([])
   useEffect(() => {
+    // console.log('before fetch:', members === []);
     const fetchMembers = async () => {
       const res = await axios.get(`${BACKEND_URL}/api/members?populate=*`)
-      console.log(res.data.data);
       setMembers(res.data.data)
+      // console.log('after fetch:', members === []);
     }
 
     fetchMembers()
@@ -76,18 +90,23 @@ const About = () => {
     <div>
       <h4 className='bold text-primary py-3'>{title}</h4>
       <div className="row">
-        {members
-        .filter(({attributes}) => attributes.role === role)
-        .map(({attributes}, index) =>
-          <Person 
-            key={attributes.name} 
-            title={attributes.name} 
-            avatar={attributes.avatar} 
-            profile={attributes} 
-            index={role+index} // to make the index unique for all people
-          />)
+        {members.length === 0
+        ? <Person loading />
+        : members
+          .filter(({attributes}) => attributes.role === role)
+          .map(({attributes}, index) =>
+            <Person
+              key={attributes.name} 
+              title={attributes.name} 
+              avatar={attributes.avatar} 
+              profile={attributes} 
+              index={role+index} // to make the index unique for all people
+            />)
         }
       </div>
+      {
+        
+      }
     </div>
   )  
 

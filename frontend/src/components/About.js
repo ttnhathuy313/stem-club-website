@@ -63,7 +63,7 @@ const Person = ({ avatar, title, profile, index, loading=false }) => {
               {/* <h5 className="modal-title" id="exampleModalLabel">Bio of { title }</h5> */}
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body w-100">
               <Bio profile={profile} avatar={<Avatar />} />
             </div>
           </div>

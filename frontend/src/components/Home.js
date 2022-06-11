@@ -14,9 +14,9 @@ const Hero = () => {
                 <div className="col-2">
 
                 </div>
-                <div className="col-8 h-100 align-items-center text-center">
-                    <img src={logo} width = "200" height = "200" alt ="Logo" className="position-relative top-10"></img>
-                    <div className="position-relative top-20">
+                <div className="col-12 col-md-8 h-100 d-flex flex-column justify-content-center align-items-center text-center my-auto">
+                    <img src={logo} width = "200" height = "200" alt ="Logo" className="mb-3 d-none d-md-block"></img>
+                    <div className="align-middle">
                         <h1 className="text-white fw-bold">Fulbright STEM Club</h1>
                         <h3 className="text-white">Leaders of the next technological revolution</h3>
                     </div>
@@ -43,7 +43,7 @@ const Mission = () => {
 
 const Value = ({value, description, img}) => {
     return (
-        <div className="col-6 text-center">
+        <div className="col-12 col-md-6 text-center">
             <img src={img} height="148" alt=""></img>
             <h5 className="text-primary fw-bold mt-2">{value}</h5>
             <p className="text-primary">{description}</p>
@@ -67,9 +67,9 @@ const CoreValues = () => {
 
 const PostPreview = ({title, category}) => {
     return (
-        <div className="col-md-3">
+        <div className="col-md-4 py-3">
             <img src={dummy1} width="100%" alt=""></img>
-            <h5 className="text-primary mt-2">{title}</h5>
+            <p className="text-primary mt-2 text-decoration-underline">{title}</p>
             <span className="text-primary bg-secondary p-2 rounded">{category}</span>
         </div>
     )

@@ -26,7 +26,7 @@ const Projects = () => {
       {/* EVENTS */}
       <div class="container">
         <SectionHeader text="Events" />
-        <div className="row mt-5">
+        <div className="row">
           <div class="col-sm">
             <Card image={ dummy } title='Trivia Night at Fulbright - an annual playground for STEM enthusiasts' date='Dec 12, 2021' />
           </div>

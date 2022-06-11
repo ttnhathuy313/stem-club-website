@@ -34,7 +34,7 @@ const Projects = () => {
       {/* PROJECT */}
       <div class="container">
         <SectionHeader text="Projects" />
-        <div className="row mt-5">
+        <div className="row">
           <div className="col-sm">
             <Card image={ dummy } title='Landscape Research Project' date='Present' />
           </div>
@@ -46,7 +46,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="row mt-5">
+        <div className="row">
           <div className="col-sm">
             <Card image={ dummy } title='SQL Workshop Series' date='Upcoming' />
           </div>

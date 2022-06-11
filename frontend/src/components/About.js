@@ -51,7 +51,7 @@ const Person = ({ avatar, title, profile, index, loading=false }) => {
 
   return (
     <div
-      className="text-center col-6 col-md-3 cursor-pointer"
+      className="text-center col-6 col-sm-4 col-md-3 col-lg-2 cursor-pointer"
     >
       <Avatar /> 
       <p className="text-primary mt-2"> { title } ({profile.subtitle}) </p>

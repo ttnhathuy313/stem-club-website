@@ -5,16 +5,41 @@ import { BACKEND_URL } from '../utils/api'
 import SectionHeader from './utils/SectionHeader'
 import './About.scss'
 
+function countString(str, ch) {
+  let count = 0
+    for (let i = 0; i < str.length; i++) {
+      if (str.charAt(i) === ch) {
+        count += 1
+      }
+    }
+  return count
+}
+
 const Bio = ({profile, avatar}) => {
+  while (countString(profile.name, ' ') !== 1) {
+    profile.name = profile.name.slice(profile.name.indexOf(' ') + 1)
+  }
   return (
-    <div className='text-start'>
-      <h3> {profile.name} </h3>
+    <div className='text-start py-3 px-3'>
+      <h3 classname="fw-bold"> {profile.name} </h3>
       <p> {profile.subtitle} </p>
       <div className='d-flex flex-row'>
         <div className="">
           {avatar}
         </div>
-        <p> {profile.bio} </p>
+        <div style={{marginLeft: 20}}>
+          <h5 classname="fw-bold">Profile</h5>
+          <div> {profile.bio} </div>
+          <div>Class of </div>
+          <div>DOB: {profile.dateOfBirth} </div>
+          <div>Joined since {profile.joinedSince} </div>
+          <div>Linkedin: {profile.linkedin != null 
+                          ? <a href={profile.linkedin}>{profile.name} </a>
+                          : "N/A"} </div>
+          <div>Major: {profile.major != null ? profile.major: "N/A"} </div>
+          <div>Minor: {profile.minor != null ? profile.minor: "N/A"} </div>
+          <div>Interest: {profile.interests != null ? profile.interests: "N/A"}</div>
+        </div>
       </div>
     </div>
   )
@@ -58,7 +83,7 @@ const Person = ({ avatar, title, profile, index, loading=false }) => {
 
       <div className="modal fade" id={`bio${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div className="modal-dialog">
-          <div className="modal-content">
+          <div className="modal-content border-radius">
             <div className="modal-header">
               {/* <h5 className="modal-title" id="exampleModalLabel">Bio of { title }</h5> */}
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

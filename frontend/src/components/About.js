@@ -94,6 +94,7 @@ const About = () => {
         ? <Person loading />
         : members
           .filter(({attributes}) => attributes.role === role)
+          .sort((a, b) => a.attributes.priority < b.attributes.priority)
           .map(({attributes}, index) =>
             <Person
               key={attributes.name} 

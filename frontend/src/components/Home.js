@@ -1,15 +1,16 @@
 // @nhomnhomm Complete this
 import logo from '../images/stem-club-logo.png'
 import SectionHeader from './utils/SectionHeader'
-import intellectual from '../images/intellectual.png'
-import career from '../images/career.png'
-import community from '../images/community.png'
-import connected from '../images/connected.png'
+import background from '../images/background.png'
+import intellectual from '../images/intellectual.jpg'
+import career from '../images/career.jpg'
+import community from '../images/community.jpg'
+import connected from '../images/connected.jpg'
 import dummy1 from '../images/blog-picture1.png'
 
 const Hero = () => {
     return (
-        <div className="container-fluid bg-primary hero-full-height p-4">
+        <div className="container-fluid hero-full-height p-4" style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
             <div className="row h-100 align-items-center">
                 <div className="col-2">
 
@@ -44,7 +45,7 @@ const Mission = () => {
 const Value = ({value, description, img}) => {
     return (
         <div className="col-12 col-md-6 text-center">
-            <img src={img} height="148" alt=""></img>
+            <img src={img} height="148" alt="" class="rounded"></img>
             <h5 className="text-primary fw-bold mt-2">{value}</h5>
             <p className="text-primary">{description}</p>
         </div>

@@ -45,7 +45,7 @@ const Mission = () => {
 const Value = ({value, description, img}) => {
     return (
         <div className="col-12 col-md-6 text-center">
-            <img src={img} height="148" alt="" class="rounded"></img>
+            <img src={img} height="200" alt="" class="rounded"></img>
             <h5 className="text-primary fw-bold mt-2">{value}</h5>
             <p className="text-primary">{description}</p>
         </div>
@@ -95,7 +95,7 @@ const Home = () => {
             <Hero/>
             <Mission/>
             <CoreValues/>
-            <LatestUpdates/>
+            {/* <LatestUpdates/> */}
         </>
     )
 }

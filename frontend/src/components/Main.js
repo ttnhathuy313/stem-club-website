@@ -5,6 +5,8 @@ import Projects from './Projects'
 import Events from './Events'
 import Blog from './Blog'
 import Podcast from './Podcast'
+import SingleProject from "./SingleProject"
+import SingleEvent from "./SingleEvent"
 
 const Main = () => {
   return (
@@ -16,6 +18,8 @@ const Main = () => {
         <Route path='/events' element={ <Events /> } />
         <Route path='/blog' element={ <Blog /> } />
         <Route path='/podcast' element={ <Podcast /> } />
+        <Route path='/projects/:slug' element={ <SingleProject /> }/>
+        <Route path='/events/:slug' element={ <SingleEvent /> }/>
       </Routes>
     </div>
   )

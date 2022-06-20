@@ -3,16 +3,12 @@ const footerLinks = [
     title: 'About',
     links:[
       {
-        text: 'Mission',
-        url: '/about'
-      },
-      {
         text: 'Members',
-        url: '/about'
+        url: 'https://fulbrightstem.club/#/about'
       },
       {
         text: 'Partners',
-        url: '/about'
+        url: 'https://fulbrightstem.club/#/about'
       }
     ]
   },
@@ -21,11 +17,11 @@ const footerLinks = [
     links:[
       {
         text: 'Projects',
-        url: '/activities'
+        url: 'https://fulbrightstem.club/#/projects'
       },
       {
         text: 'Events',
-        url: '/activities'
+        url: 'https://fulbrightstem.club/#/events'
       },
     ]
   },
@@ -37,12 +33,9 @@ const footerLinks = [
         url: 'https://open.spotify.com/show/1S0hnURWTEnayC2mgmcyht'
       },
       {
-        text: 'Journal'
+        text: 'Journal',
+        url: 'https://fulbright-stem-club.notion.site/FUJ-Spring-22-Call-for-papers-d8fae703f37c4edba6309ea2fc27a39f'
       },
-      {
-        text: 'Blogs',
-        url: '/blog'
-      }
     ]
   },
 ]

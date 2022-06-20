@@ -10,7 +10,7 @@ const Column = ({ title, links }) => {
       <h5 className="fw-bold text-white"> { title } </h5>
       {
         links.map((link, index) => {
-          return <a className='text-white text-break' href={ link.url } key={index}> { link.text } </a>
+          return <a className='text-white text-break text-decoration-none' href={ link.url } key={index}> { link.text } </a>
         })
       }
     </div>

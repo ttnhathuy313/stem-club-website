@@ -48,7 +48,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <div className="container col-9">
+    <div className="container pt-4 col-9">
       <SectionHeader text="Projects" />
       <div className="row my-5">
         {projects

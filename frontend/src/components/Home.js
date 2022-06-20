@@ -32,9 +32,9 @@ const Hero = () => {
 
 const Mission = () => {
     return (
-        <div className="mt-4">
+        <div className="mt-4 container">
             <SectionHeader text="Mission" />
-            <div className="col-8 mx-auto">
+            <div className="">
                 <p>The world is evolving in unexpected ways. Fulbright is built to close the gap between higher education and Vietnam’s greatest needs. One of such needs is quality human resources for the technological revolution.</p>
                 <p>Fulbright STEM Club is an incubator of future leaders for the next technological revolution. By 2025, Fulbright STEM Club will be one of the most innovative and vibrant STEM communities for Vietnamese youth.</p>
             </div>
@@ -45,7 +45,7 @@ const Mission = () => {
 const Value = ({value, description, img}) => {
     return (
         <div className="col-12 col-md-6 text-center">
-            <img src={img} height="200" alt="" class="rounded"></img>
+            <img src={img} width="100%" alt="" class="rounded"></img>
             <h5 className="text-primary fw-bold mt-2">{value}</h5>
             <p className="text-primary">{description}</p>
         </div>
@@ -54,9 +54,9 @@ const Value = ({value, description, img}) => {
 
 const CoreValues = () => {
     return (
-        <div className="">
+        <div className="container">
             <SectionHeader text="Core Values" />
-            <div className="mx-auto col-8 row">
+            <div className="row gx-5">
                 <Value img={community} value="Community-minded" description="We solve real problems in our community"/>
                 <Value img={connected} value="Connected" description="We help great minds meet, network, and socialize"/>
                 <Value img={intellectual} value="Intelltecually curious" description="We create innovative STEM-powered products"/>
@@ -91,12 +91,12 @@ const LatestUpdates = () => {
 
 const Home = () => {
     return (
-        <>
+        <div>
             <Hero/>
             <Mission/>
             <CoreValues/>
             {/* <LatestUpdates/> */}
-        </>
+        </div>
     )
 }
 

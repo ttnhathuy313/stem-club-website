@@ -114,11 +114,11 @@ const About = () => {
   const People = ({role, title}) => (
     <div>
       <h4 className='bold text-primary py-3'>{title}</h4>
-      <div className="row">
+      <div className="row gx-5">
         {members.length === 0
         ? <Person loading />
         : members
-          .filter(({attributes}) => attributes.role === role)
+          .filter(({attributes}) => attributes.role === role && attributes.priorityLevel !== -1)
           .sort((a, b) => a.attributes.priority < b.attributes.priority)
           .map(({attributes}, index) =>
             <Person
@@ -137,7 +137,7 @@ const About = () => {
   )  
 
   return (
-    <div className='px-5 py-3'>
+    <div className='container'>
       <SectionHeader text="Our Team" />
       <People role='leader' title='Leaders' />
       <People role='member' title='Members' />

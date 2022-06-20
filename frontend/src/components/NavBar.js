@@ -25,23 +25,25 @@ const NavLink = ({path, text}) => {
 const NavBar = () => {
   return (
     <div className = 'navbar navbar-expand-md navbar-dark bg-primary sticky-top border-bottom'>
-      <Link to='/' className = 'navbar-brand ms-4'>
-        <img src={logo} width = '40' height = '40' alt ='Logo' ></img>
-      </Link>
+      <div className="container">
+        <Link to='/' className = 'navbar-brand'>
+          <img src={logo} width = '40' height = '40' alt ='Logo' ></img>
+        </Link>
 
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarToggler" aria-controls="navBarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarToggler" aria-controls="navBarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-      <div className='collapse navbar-collapse' id ='navBarToggler'>
-        <div className = 'navbar-nav ms-auto'>
-          <NavLink path = '/' text = 'Home'/>
-          <NavLink path = '/about' text = 'About Us'/>
-          <NavLink path = '/events' text = 'Events'/>
-          <NavLink path = '/projects' text = 'Projects'/>
-          {/* <NavLink path = '/blog' text = 'Blog'/> */}
-          <NavLink path = '/podcast' text = 'Podcast'/>
-          {/* <NavLink path = '/journal' text = 'Journal'/> */}
+        <div className='collapse navbar-collapse' id ='navBarToggler'>
+          <div className = 'navbar-nav ms-auto'>
+            <NavLink path = '/' text = 'Home'/>
+            <NavLink path = '/about' text = 'About Us'/>
+            <NavLink path = '/events' text = 'Events'/>
+            <NavLink path = '/projects' text = 'Projects'/>
+            {/* <NavLink path = '/blog' text = 'Blog'/> */}
+            <NavLink path = '/podcast' text = 'Podcast'/>
+            {/* <NavLink path = '/journal' text = 'Journal'/> */}
+          </div>
         </div>
       </div>
     </div>

@@ -5,20 +5,20 @@ import { BACKEND_URL } from '../utils/api'
 import SectionHeader from './utils/SectionHeader'
 import './About.scss'
 
-function countString(str, ch) {
-  let count = 0
-    for (let i = 0; i < str.length; i++) {
-      if (str.charAt(i) === ch) {
-        count += 1
-      }
-    }
-  return count
-}
+// function countString(str, ch) {
+//   let count = 0
+//     for (let i = 0; i < str.length; i++) {
+//       if (str.charAt(i) === ch) {
+//         count += 1
+//       }
+//     }
+//   return count
+// }
 
 const Bio = ({profile, avatar}) => {
-  while (countString(profile.name, ' ') !== 1) {
-    profile.name = profile.name.slice(profile.name.indexOf(' ') + 1)
-  }
+  // while (countString(profile.name, ' ') !== 1) {
+  //   profile.name = profile.name.slice(profile.name.indexOf(' ') + 1)
+  // }
   return (
     <div className='text-start py-3 px-3'>
       <h3 classname="fw-bold"> {profile.name} </h3>
@@ -76,10 +76,15 @@ const Person = ({ avatar, title, profile, index, loading=false }) => {
 
   return (
     <div
-      className="text-center col-6 col-sm-4 col-md-3 col-lg-2 cursor-pointer"
+      className="text-center col-6 col-sm-4 col-md-3 col-lg-2 cursor-pointer flex flex-column align-items-center"
     >
       <Avatar /> 
-      <p className="text-primary mt-2"> { title } ({profile.subtitle}) </p>
+      <div className="text-primary mt-2 fw-bold"> 
+        { title }
+      </div>
+      <p className="text-gray-100">
+        {profile.subtitle}  
+      </p>
 
       <div className="modal fade" id={`bio${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div className="modal-dialog">
@@ -114,7 +119,7 @@ const About = () => {
   const People = ({role, title}) => (
     <div>
       <h4 className='bold text-primary py-3'>{title}</h4>
-      <div className="row gx-5">
+      <div className="row gx-3 gx-md-5">
         {members.length === 0
         ? <Person loading />
         : members

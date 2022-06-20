@@ -10,7 +10,7 @@ import dummy1 from '../images/blog-picture1.png'
 
 const Hero = () => {
     return (
-        <div className="container-fluid hero-full-height p-4" style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+        <div className="container-fluid hero-full-height p-4" style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <div className="row h-100 align-items-center">
                 <div className="col-2">
 

@@ -5,6 +5,9 @@ import axios from "axios"
 import { BACKEND_URL } from '../utils/api'
 import dummy from '../images/blog-picture1.png'
 import { Link } from "react-router-dom";
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en.json'
+TimeAgo.addDefaultLocale(en)
 
 const Card = ({title, image, date, slug}) => {
   const imgUrl = image.data
@@ -19,8 +22,8 @@ const Card = ({title, image, date, slug}) => {
               <img className="card-img-top rounded" src={imgUrl} alt=""/>
           </div> 
           <div>
-            <div className="row">
-              <h6 className="card-title text-primary fw-bold mt-3">{title}</h6>
+            <div className="card-body row">
+              <h6 className="card-title text-primary fw-bold">{title}</h6>
               <div className="card-text text-muted text-secondary fst-italic">
                 <small class="text-muted">
                   {date}
@@ -39,13 +42,13 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       const res = await axios.get(`${BACKEND_URL}/api/events?populate=*`)
-      console.log(`${BACKEND_URL}/api/events?populate=*`);
-      console.log(res.data.data);
       setEvents(res.data.data)
     }
 
     fetchEvents()
   }, [])
+
+  const timeAgo = new TimeAgo('en-US')
 
   return (
     <div className="container pt-4 col-9">
@@ -57,7 +60,8 @@ const Events = () => {
             <Card 
               image={ attributes.featureImage } 
               title={ attributes.name } 
-              date={ moment().startOf('day').fromNow() } 
+              date={ timeAgo.format(Date.now() - (Date.now() - Date.parse(attributes.publishedAt)), 
+                'round') } 
               slug={ attributes.slug }
             />
           </div>

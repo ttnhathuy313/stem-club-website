@@ -25,8 +25,6 @@ const SingleProject = () =>{
   useEffect(() => {
     const fetchProject = async () => {
       const res = await axios.get(`${BACKEND_URL}/api/projects?${query}`)
-      console.log('The URL of data is ' + `${BACKEND_URL}/api/projects?${query}`);
-      console.log(res.data.data);
       setProject(res.data.data)
     }
 
@@ -35,7 +33,6 @@ const SingleProject = () =>{
 
 
   const FeatureImg = (imgsrc) => {
-    console.log(imgsrc.imgsrc.data);
     const image = imgsrc.imgsrc.data
       ? imgsrc.imgsrc.data.attributes.url
       : dummy;

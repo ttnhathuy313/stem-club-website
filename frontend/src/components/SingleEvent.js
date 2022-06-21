@@ -24,8 +24,6 @@ const SingleEvent = () =>{
   useEffect(() => {
     const fetchEvent = async () => {
       const res = await axios.get(`${BACKEND_URL}/api/events?${query}`)
-      console.log('The URL of data is ' + `${BACKEND_URL}/api/events?${query}`);
-      console.log(res.data.data);
       setEvent(res.data.data)
     }
 
@@ -34,7 +32,6 @@ const SingleEvent = () =>{
 
 
   const FeatureImg = (imgsrc) => {
-    console.log(imgsrc.imgsrc.data);
     const image = imgsrc.imgsrc.data
       ? imgsrc.imgsrc.data.attributes.url
       : dummy;

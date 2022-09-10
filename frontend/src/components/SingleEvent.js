@@ -48,7 +48,9 @@ const SingleEvent = () =>{
         <div>
           <SectionHeader text={ attributes.name } className="mt-5"/>
           <FeatureImg imgsrc={ attributes.featureImage }/>
-          <ReactMarkdown className="my-4">
+          <ReactMarkdown className="my-4" components={{img:({src, ...props}) =>{
+            console.log(src);
+            return <img src={src} width="100%" className="my-4"/> }}}>
             {attributes.description}
           </ReactMarkdown>
         </div>

@@ -15,6 +15,8 @@ import './About.scss'
 //   return count
 // }
 
+//huhuhuhu
+
 const Bio = ({profile, avatar}) => {
   // while (countString(profile.name, ' ') !== 1) {
   //   profile.name = profile.name.slice(profile.name.indexOf(' ') + 1)

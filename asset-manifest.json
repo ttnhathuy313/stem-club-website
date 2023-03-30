@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.385d5c46.css",
+    "main.js": "/static/js/main.bcba88b3.js",
+    "static/js/787.eb3da103.chunk.js": "/static/js/787.eb3da103.chunk.js",
+    "static/media/connected.jpg": "/static/media/connected.2877850a4c99805cf09a.jpg",
+    "static/media/intellectual.jpg": "/static/media/intellectual.0fec74221ad243b5e3af.jpg",
+    "static/media/community.jpg": "/static/media/community.081974ae77a41ebd30ac.jpg",
+    "static/media/career.jpg": "/static/media/career.bd86eee0401852b4f6b3.jpg",
+    "static/media/blog-cover.png": "/static/media/blog-cover.57c4d92046f9c7412aa5.png",
+    "static/media/blog-picture1.png": "/static/media/blog-picture1.740487b544b6ab1d1916.png",
+    "static/media/blog-picture2.png": "/static/media/blog-picture2.a704e6f4f13f95f7824e.png",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "static/media/background.png": "/static/media/background.df4f0aa26fa4f8bacc65.png",
+    "static/media/stem-club-logo.png": "/static/media/stem-club-logo.17416a1bf7ab16ee321a.png",
+    "index.html": "/index.html",
+    "main.385d5c46.css.map": "/static/css/main.385d5c46.css.map",
+    "main.bcba88b3.js.map": "/static/js/main.bcba88b3.js.map",
+    "787.eb3da103.chunk.js.map": "/static/js/787.eb3da103.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.385d5c46.css",
+    "static/js/main.bcba88b3.js"
+  ]
+}

@@ -1,1 +1,1 @@
-export const BACKEND_URL = 'https://stem-website-be.herokuapp.com'
+export const BACKEND_URL = 'https://raw.githubusercontent.com/hoangm960/stem-club-website/render-data/backend/'

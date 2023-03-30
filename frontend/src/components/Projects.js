@@ -10,18 +10,18 @@ import en from 'javascript-time-ago/locale/en.json'
 TimeAgo.addDefaultLocale(en)
 
 
-const Card = ({title, image, date, slug}) => {
-  const imgUrl = image.data
-    ? image.data.attributes.url
+const Card = ({ title, image, date, slug }) => {
+  const imgUrl = image
+    ? image.url
     : dummy
-  
+
   return (
-    <Link style={{textDecoration: 'none'}} to={`${slug}`}>
+    <Link style={{ textDecoration: 'none' }} to={`${slug}`}>
       <div className="cursor-pointer">
         <div className="card border-0">
           <div className="inner">
-              <img className="card-img-top rounded" src={imgUrl} alt=""/>
-          </div> 
+            <img className="card-img-top rounded" src={imgUrl} alt="" />
+          </div>
           <div>
             <div className="card-body row">
               <h6 className="card-title text-primary fw-bold">{title}</h6>
@@ -42,8 +42,8 @@ const Projects = () => {
   const [projects, setProjects] = useState([])
   useEffect(() => {
     const fetchProjects = async () => {
-      const res = await axios.get(`${BACKEND_URL}/api/projects?populate=*`)
-      setProjects(res.data.data)
+      const res = await axios.get(`${BACKEND_URL}/projects.json`)
+      setProjects(res.data)
     }
 
     fetchProjects()
@@ -55,18 +55,21 @@ const Projects = () => {
     <div className="container pt-4 col-9">
       <SectionHeader text="Projects" />
       <div className="row my-5">
-        {projects
-        .map(({attributes}) => 
-          <div class="col-md-4 mb-5">
-            <Card 
-              image={ attributes.featureImage } 
-              title={ attributes.name } 
-              date = { timeAgo.format(Date.now() - (Date.now() - Date.parse(attributes.publishedAt)), 
-                'round') }
-              slug={ attributes.slug }
-            />
-          </div>
-        )}
+        {projects.length === 0 ?
+          <div className='col-6 col-md-3'>
+            <p>Loading ...</p>
+          </div> : projects
+            .map(attributes =>
+              <div class="col-md-4 mb-5">
+                <Card
+                  image={attributes.featureImage}
+                  title={attributes.name}
+                  date={timeAgo.format(Date.now() - (Date.now() - Date.parse(attributes.publishedAt)),
+                    'round')}
+                  slug={attributes.slug}
+                />
+              </div>
+            )}
       </div>
     </div>
   )

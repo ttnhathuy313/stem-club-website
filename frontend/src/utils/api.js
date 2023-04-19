@@ -1,1 +1,0 @@
-export const BACKEND_URL = 'https://raw.githubusercontent.com/hoangm960/stem-club-website/render-data/backend/'

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import SectionHeader from "./utils/SectionHeader";
-import moment from 'moment';
-import axios from "axios"
-import { BACKEND_URL } from '../utils/api'
 import dummy from '../images/blog-picture1.png'
 import { Link } from "react-router-dom";
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
+import { db } from '../utils/db.js'
+import { collection, getDocs } from "firebase/firestore";
 TimeAgo.addDefaultLocale(en)
 
 const Card = ({ title, image, date, slug}) => {
@@ -41,8 +40,12 @@ const Events = () => {
   const [events, setEvents] = useState([])
   useEffect(() => {
     const fetchEvents = async () => {
-      const res = await axios.get(`${BACKEND_URL}/events.json`)
-      setEvents(res.data)
+      var tempList = []
+      const querySnapshot = await getDocs(collection(db, "events"));
+      querySnapshot.forEach((doc) => {
+        tempList.push(doc.data());
+      });
+      setEvents(tempList)
     }
 
     fetchEvents()

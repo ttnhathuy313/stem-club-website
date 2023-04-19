@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import SectionHeader from "./utils/SectionHeader";
-import moment from 'moment';
-import axios from "axios"
-import { BACKEND_URL } from '../utils/api'
 import dummy from '../images/blog-picture1.png'
 import { Link } from "react-router-dom";
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
+import { db } from '../utils/db.js'
+import { collection, getDocs } from "firebase/firestore";
 TimeAgo.addDefaultLocale(en)
 
 
@@ -42,15 +41,18 @@ const Projects = () => {
   const [projects, setProjects] = useState([])
   useEffect(() => {
     const fetchProjects = async () => {
-      const res = await axios.get(`${BACKEND_URL}/projects.json`)
-      setProjects(res.data)
+      var tempList = []
+      const querySnapshot = await getDocs(collection(db, "projects"));
+      querySnapshot.forEach((doc) => {
+        tempList.push(doc.data());
+      });
+      setProjects(tempList)
     }
 
     fetchProjects()
   }, [])
 
   const timeAgo = new TimeAgo('en-US')
-
   return (
     <div className="container pt-4 col-9">
       <SectionHeader text="Projects" />

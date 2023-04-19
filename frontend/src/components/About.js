@@ -1,8 +1,8 @@
 import logo from '../images/stem-club-logo.png'
 import { useEffect, useState } from "react"
-import axios from "axios"
-import { BACKEND_URL } from '../utils/api'
 import SectionHeader from './utils/SectionHeader'
+import { db } from '../utils/db.js'
+import { collection, getDocs } from "firebase/firestore";
 import './About.scss'
 
 // function countString(str, ch) {
@@ -108,8 +108,12 @@ const About = () => {
   const [members, setMembers] = useState([])
   useEffect(() => {
     const fetchMembers = async () => {
-      const res = await axios.get(`${BACKEND_URL}/members.json`)
-      setMembers(res.data)
+      var tempList = []
+      const querySnapshot = await getDocs(collection(db, "members"));
+      querySnapshot.forEach((doc) => {
+        tempList.push(doc.data());
+      });
+      setMembers(tempList)
     }
 
     fetchMembers()
